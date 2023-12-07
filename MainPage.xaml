@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiPopup"
+             xmlns:syncLayout="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             x:Class="MauiPopup.MainPage">
+    
+    <ContentPage.Behaviors>
+        <local:ContentPageBehavior/>
+    </ContentPage.Behaviors>
+    
+    <ContentPage.Resources>
+        <Style TargetType="syncLayout:SfPopup">
+            <Setter Property="PopupStyle">
+                <Setter.Value>
+                    <syncLayout:PopupStyle
+                            CornerRadius="0"
+                            HeaderBackground="LightCyan"
+                            FooterBackground="LightCyan"
+                            AcceptButtonBackground ="Green"
+                            AcceptButtonTextColor="White"
+                            DeclineButtonBackground="Red"
+                            DeclineButtonTextColor="White"
+                        />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+        <Button Text="Click to Show Popup" x:Name="showPopupButton"/>
+        <syncLayout:SfPopup x:Name="popUpLayout" 
+                            ShowHeader="True"
+                            ShowFooter="True"
+                            AppearanceMode="TwoButton">
+        </syncLayout:SfPopup>
+    </StackLayout>
+</ContentPage>
